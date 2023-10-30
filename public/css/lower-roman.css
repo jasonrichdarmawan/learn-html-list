@@ -1,0 +1,22 @@
+/* reference:
+1. https://www.w3schools.com/cssref/tryit.php?filename=trycss_content_list-bullets
+2. https://stackoverflow.com/questions/41992710/css-ordered-list-style-the-number-when-li-contains-multiple-lines-maintainin
+*/
+ul.lower-roman {
+    counter-reset: item;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.lower-roman li {
+    counter-increment: item;
+    display: table-row;
+    padding-left: 1rem;
+}
+
+ul.lower-roman li:before {
+    content: "(" counter(item, lower-roman) ")";
+    display: table-cell;
+    padding-right: 0.5rem;
+}
